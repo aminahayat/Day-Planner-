@@ -1,86 +1,101 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <title>Daily Planner</title>
-</head>
-<body>
-    <div class="header" id="header">
-        <h1>Daily Planner</h1>
-        <h2 id="date"></h2>
-    </div>
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <title>Work Day Scheduler</title>
+  </head>
 
+  <body>
+    <header class="jumbotron">
+      <h1 class="display-3">Work Day Scheduler</h1>
+      <p class="lead">A simple calendar app for scheduling your work day</p>
+      <p id="current-day" class="lead"></p>
+      <p id="moment-test-element"></p>
+    </header>
     <div class="container">
-        <div id="timeBlocks">
-            
-            <div class="timeDiv" id="row1" data-time="9">
-                <h3>Good Morning!</h3>
-                <p>9:00 am</p>
-                <textarea type="text" class="textArea"></textarea>
-                <button class="saveBtn">Save</button>
-            </div>
-            
-            <div class="timeDiv" id="row2" data-time="10">
-                <p>10:00 am</p>
-                <textarea type="text" class="textArea"></textarea>
-                <button class="saveBtn">Save</button>
-            </div>
-            
-            <div class="timeDiv" id="row3" data-time="11">
-                <p>11:00 am</p>
-                <textarea type="text" class="textArea"></textarea>
-                <button class="saveBtn">Save</button>
-            </div>
-           
-            <div class="timeDiv" id="row4" data-time="12">
-                <h3>Lunchtime</h3>
-                <p>12:00 pm</p>
-                <textarea type="text" class="textArea"></textarea>
-                <button class="saveBtn">Save</button>
-            </div>
-            
-            <div class="timeDiv" id="row5" data-time="13">
-                <p>1:00 pm</p>
-                <textarea type="text" class="textArea"></textarea>
-                <button class="saveBtn">Save</button>
-            </div>
-            
-            <div class="timeDiv" id="row6" data-time="14">
-                <p>2:00 pm</p>
-                <textarea type="text" class="textArea"></textarea>
-                <button class="saveBtn">Save</button>
-            </div>
-            
-            <div class="timeDiv" id="row7" data-time="15">
-                <p>3:00 pm</p>
-                <textarea type="text" class="textArea"></textarea>
-                <button class="saveBtn">Save</button>
-            </div>
-            
-            <div class="timeDiv" id="row8" data-time="16">
-                <h3>Feelin' Dinner?</h3>
-                <p>4:00 pm</p>
-                <textarea type="text" class="textArea"></textarea>
-                <button class="saveBtn">Save</button>
-            </div>
-            
-            <div class="timeDiv" id="row9" data-time="17">
-                <p>5:00 pm</p>
-                <textarea type="text" class="textArea"></textarea>
-                <button class="saveBtn">Save</button>
-            </div>
-            <h3>You made it through the day...</h3>
-            
-            
-            
-        </div>
+      <table>
+        <tr>
+          <th>Time</th>
+          <th>Tasks</th>
+          <th>Input Tasks</th>
+        </tr>
+        <tr id="prehours">
+          <td></td>
+          <td>The working day has not begun</td>
+        </tr>
+        <tr id="hour9">
+          <td>09:00</td>
+          <td>Placeholder Text</td>
+          <td>Placeholder Text</td>
+        </tr>
+        <tr id="hour10">
+          <td>10:00</td>
+          <td>Placeholder Text</td>
+          <td>Placeholder Text</td>
+        </tr>
+        <tr id="hour11">
+          <td>11:00</td>
+          <td>Placeholder Text</td>
+          <td>Placeholder Text</td>
+        </tr>
+        <tr id="hour12">
+          <td>12:00</td>
+          <td>Placeholder Text</td>
+          <td>Placeholder Text</td>
+        </tr>
+        <tr id="hour13">
+          <td>13:00</td>
+          <td>Placeholder Text</td>
+          <td>Placeholder Text</td>
+        </tr>
+        <tr id="hour14">
+          <td>14:00</td>
+          <td>Placeholder Text</td>
+          <td>Placeholder Text</td>
+        </tr>
+        <tr id="hour15">
+          <td>15:00</td>
+          <td>Placeholder Text</td>
+          <td>Placeholder Text</td>
+        </tr>
+        <tr id="hour16">
+          <td>16:00</td>
+          <td>Placeholder Text</td>
+          <td>Placeholder Text</td>
+        </tr>
+        <tr id="hour17">
+          <td>17:00</td>
+          <td>Placeholder Text</td>
+          <td>Placeholder Text</td>
+        </tr>
+        <tr id="after-hours">
+          <td></td>
+          <td>The working day has ended.</td>
+          <td>Placeholder Text</td>
+        </tr>
+      </table>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
-   <script src="script.js"></script>
-</body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+    <script src="./assets/script.js"></script>
+  </body>
 </html>

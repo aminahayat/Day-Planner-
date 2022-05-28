@@ -11,4 +11,4 @@ Entries are saved to local storage and persist when the page is closed or refres
 
 
 
-deployed url : 
+deployed url : https://aminahayat.github.io/Day-Planner-/

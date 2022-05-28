@@ -3,7 +3,7 @@
 var myTEXT = $("#myText");
 var saveBtn = $(".saveBtn");
 var DescriptionBox = $("input");
-var CurrentHR = moment().format("h");
+
 
 // Todays Date
 
@@ -27,7 +27,7 @@ $(document).ready(function () {
     // Logging the activity
     console.log("button is clicked");
     console.log(myText);
-    
+    console.log(timings);
   });
 
   // Below are timing lines, without these each value wont save

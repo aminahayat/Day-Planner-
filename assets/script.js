@@ -68,4 +68,3 @@ DescriptionBox.each(function (Color) {
     $(this).addClass("future");
   }
 });
-console.log(CurrentHR);

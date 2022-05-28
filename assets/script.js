@@ -3,7 +3,7 @@
 var myTEXT = $("#myText");
 var saveBtn = $(".saveBtn");
 var DescriptionBox = $("input");
-
+var CurrentHR = moment().format("h");
 
 // Todays Date
 

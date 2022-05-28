@@ -27,7 +27,7 @@ $(document).ready(function () {
     // Logging the activity
     console.log("button is clicked");
     console.log(myText);
-    console.log(timings);
+    
   });
 
   // Below are timing lines, without these each value wont save

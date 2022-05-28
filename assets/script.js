@@ -1,71 +1,88 @@
-// VARIABLES
+const currentDay = $("#currentDay");
+// array time blocks
+const hoursArray = [
+  $("#8"),
+  $("#9"),
+  $("#10"),
+  $("#11"),
+  $("#12"),
+  $("#1"),
+  $("#2"),
+  $("#3"),
+  $("#4"),
+  $("#5"),
+  $("#6"),
+];
 
-var myTEXT = $("#myText");
-var saveBtn = $(".saveBtn");
-var DescriptionBox = $("input");
-var CurrentHR = moment().format("h");
+//current time and day
+currentDay.text(moment().format("dddd, MMMM Do YYYY, H:mm:ss"));
+function timeKeeper() {
+  currentDay.text(moment().format("dddd, MMMM Do YYYY, H:mm:ss"));
+}
+setInterval(timeKeeper, 1000);
 
-// Todays Date
+//Change time block colors to represent past/present/future
+let currentHour = moment().format("H");
+function pastPresentFuture() {
+  currentHour = moment().format("H");
+  for (i = 0; i < hoursArray.length; i++) {
+    if (currentHour == i + 8) {
+      hoursArray[i].addClass("present");
+    } else if (currentHour < i + 8) {
+      hoursArray[i].addClass("future");
+    } else {
+      hoursArray[i].addClass("past");
+    }
+  }
+}
+// initial render of past/present/future colours
+pastPresentFuture();
+// rerun every minute so it updates throughout the day
+setInterval(pastPresentFuture, 60000);
 
-var date = moment().format("MMMM Do, YYYY");
-$("#currentDay").text(date);
+//saving user input to local storage
+let inputArray = $("input");
+let inputValues = [];
+function saveInput(e) {
+  $(e.target).css("display", "none"); //save button disappears on save
+  inputValues = [];
+  for (let i = 0; i < inputArray.length; i++) {
+    inputValues.push(inputArray[i].value);
+    localStorage.setItem("timeInputs", JSON.stringify(inputValues));
+  }
+}
 
-// LOCAL STORAGE FUNCTION ------------------------------------------------------------------------------
+// putting localStorage into page
+if (localStorage.getItem("timeInputs") == null) {
+  inputValues = [];
+  for (let i = 0; i < inputArray.length; i++) {
+    inputValues.push(inputArray[i].value);
+    localStorage.setItem("timeInputs", JSON.stringify(inputValues));
+  }
+}
+renderInputs();
+function renderInputs() {
+  for (let i = 0; i < inputArray.length; i++) {
+    inputArray[i].value = JSON.parse(localStorage.getItem("timeInputs"))[i];
+  }
+}
 
-$(document).ready(function () {
-  // Save buttons job
-  $(".saveBtn").on("click", function () {
-    // Catch the value of 3rd 'dom' down, which is the user input value/class called description
-    var myText = $(this).siblings(".description").val();
+//save user inputs on save buttons
+const buttons = $("button");
+for (let button of buttons) {
+  $(button).click(saveInput);
+}
 
-    // Catch the id of the 1st 'dom', which is the times, explained in the lines below(34-43)
-    var timings = $(this).parent().attr("id");
-
-    // Below saves users input on the planner even after refreshing in local storage..
-    localStorage.setItem(timings, myText);
-
-    // Logging the activity
-    console.log("button is clicked");
-    console.log(myText);
-    console.log(timings);
+// save button appears when input is changed
+for (let i = 0; i < inputArray.length; i++) {
+  $(inputArray[i]).on("input", function (e) {
+    $(e.target)
+      .parent()
+      .parent()
+      .children()
+      .eq(1)
+      .children()
+      .eq(0)
+      .css("display", "block");
   });
-
-  // Below are timing lines, without these each value wont save
-
-  $("#9am .description").val(localStorage.getItem("9am"));
-  $("#10am .description").val(localStorage.getItem("10am"));
-  $("#11am .description").val(localStorage.getItem("11am"));
-  $("#12pm .description").val(localStorage.getItem("12pm"));
-  $("#1pm .description").val(localStorage.getItem("1pm"));
-  $("#2pm .description").val(localStorage.getItem("2pm"));
-  $("#3pm .description").val(localStorage.getItem("3pm"));
-  $("#4pm .description").val(localStorage.getItem("4pm"));
-  $("#5pm .description").val(localStorage.getItem("5pm"));
-  $("#6pm .description").val(localStorage.getItem("6pm"));
-});
-
-// -----------------------------------------------------------------------------------------------------------
-
-// COLOR CODE BASED ON TENSE
-
-// Each 'input' box will get colour coded based on the below function
-DescriptionBox.each(function (Color) {
-  // "color" is 0, if "0" and counting + 9 is less than current hour, then create class PAST...
-  if (CurrentHR > Color + 9) {
-    // Find the 'past' class and colour GREY - CSS
-    $(this).addClass("past");
-  }
-
-  // If the current hour is equals to hours counting it is PRESENT...
-  if (CurrentHR == Color + 9) {
-    // Find the 'present' class and colour RED - CSS
-    $(this).addClass("present");
-  }
-
-  // If counting number + 9 is larger than current hour, then create class FUTURE...
-  if (CurrentHR < Color + 9) {
-    // Find the 'future' class and colour GREEN - CSS
-    $(this).addClass("future");
-  }
-});
-console.log(CurrentHR);
+}

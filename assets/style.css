@@ -1,10 +1,10 @@
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   line-height: 1;
 }
 
-input {
+textarea {
   background: transparent;
   border: none;
   resize: none;
@@ -25,17 +25,12 @@ input {
   white-space: pre-wrap;
 }
 
-.fave {
-  font-style: italic;
-  font-size: 13px;
-}
 .time-block {
   text-align: center;
   border-radius: 15px;
 }
 
 .row {
-  white-space: pre-wrap;
   height: 80px;
   border-top: 1px solid white;
 }
@@ -65,11 +60,20 @@ input {
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  background-color: #edba67;
-  color: rgb(6, 6, 6);
+  background-color: #06aed5;
+  color: white;
+  cursor: pointer;
 }
 
-.saveBtn:hover {
+.btn{
+  display: none;
+}
+
+.saveBtn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
+}
+
+div {
+  color: #000000;
 }

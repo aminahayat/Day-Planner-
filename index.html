@@ -18,135 +18,177 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./assets/style.css" />
-    <script
-    type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
-  ></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-   
-    <title>My Perfect Work Day Scheduler</title>
+    <link rel="stylesheet" href="assets/style.css" />
+    <title>Work Day Scheduler</title>
   </head>
 
   <body>
     <header class="jumbotron">
-      <h1 class="display-3">Work Day Planner</h1>
-      <p  class="fave"><strong>Plan your day effectively with the Work Day Planner to have more control of your day!</strong></p>
-      <br>
-      <p class ="fave"> A perfect hourly planner fit for your daily routine. Enter your hourly activity and click SAVE. Your planner will automatically tell you which hour you are currently on, which has past and the next!</p>
-      <p id = "currentDay" class="lead"> 
-      </p>
-      
+      <h1 class="display-3">Work Day Scheduler</h1>
+      <p class="lead">A simple calendar app for scheduling your work day</p>
+      <p id="currentDay" class="lead"></p>
     </header>
-
-      <!-- Timeblocks go here -->
-
-      <div class="time-block"><strong>Have a great day!</strong></div>
-      <br>
-     <div class = "container">
-       
-        <div class="time-block">
-
-          <!-- 9am block -->
-              <div id="9am" class="row time-block">
-              <div class="col-md-1 hour">
-                    9 AM
-              </div>
-              <input id ="myText" class="col-md-9 description"/>
-              <button class="saveBtn col">SAVE</button>
-            </div>
-            
-            <!-- 10am block -->
-            <div id="10am" class="row time-block">
-              <div class="col-md-1 hour">
-                  10 am
-              </div>
-              <input id ="myText" class="col-md-9 description"/>
-              <button class="saveBtn col">SAVE</button>
-            </div>
-            </div>
-            <!-- 11am block -->
-            <div id="11am" class="row time-block">
-              <div class="col-md-1 hour">
-                  11 am
-              </div>
-              <input id ="myText" class="col-md-9 description"/>
-              <button class="saveBtn col">SAVE</button>
-            </div>
-            </div>
-            <div class = "container">
-        <!-- 12pm block -->
-        <div id="12pm" class="row time-block">
-          <div class="col-md-1 hour">
-              12 pm
-            </div>
-          <input id ="myText" class="col-md-9 description"/>
-          <button class="saveBtn col">SAVE</button>
+    <div class="container" id="timeblockContainer">
+      <!-- Time blocks here -->
+      <div id="8" class="row align-items-center border border-primary">
+        <div class="input-group input-group-lg col-10">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="8am">8am</span>
+          </div>
+          <input type="text" class="form-control" aria-label="8am time block" />
+        </div>
+        <div class="col-2">
+          <button id="button1" type="button" class="btn btn-success">
+            Save
+          </button>
         </div>
       </div>
+      <div id="9" class="row align-items-center border border-primary">
+        <div class="input-group input-group-lg col-10">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="9am">9am</span>
+          </div>
+          <input type="text" class="form-control" aria-label="9am time block" />
+        </div>
+        <div class="col-2">
+          <button id="button2" type="button" class="btn btn-success">
+            Save
+          </button>
+        </div>
       </div>
-      <div class = "container">
-         <!-- 1pm block -->
-         <div id="1pm" class="row time-block">
-          <div class="col-md-1 hour">
-              1 pm
+      <div id="10" class="row align-items-center border border-primary">
+        <div class="input-group input-group-lg col-10">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="10am">10am</span>
           </div>
-          <input id ="myText" class="col-md-9 description"/>
-          <button class="saveBtn col">SAVE</button>
+          <input
+            type="text"
+            class="form-control"
+            aria-label="10am time block"
+          />
         </div>
+        <div class="col-2">
+          <button id="button3" type="button" class="btn btn-success">
+            Save
+          </button>
         </div>
-        <div class = "container">
-          <!-- 2pm block -->
-          <div id="2pm" class="row time-block">
-            <div class="col-md-1 hour">
-                2 pm
-            </div>
-            <input id ="myText" class="col-md-9 description"/>
-            <button class="saveBtn col">SAVE</button>
+      </div>
+      <div id="11" class="row align-items-center border border-primary">
+        <div class="input-group input-group-lg col-10">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="11am">11am</span>
           </div>
-          </div>
-          <div class = "container">
-          <!-- 3pm block -->
-          <div id="3pm" class="row time-block">
-            <div class="col-md-1 hour">
-                3 pm
-            </div>
-            <input id ="myText" class="col-md-9 description"/>
-            <button class="saveBtn col">SAVE</button>
-          </div>
-          </div>
-          <div class = "container">
-            <!-- 4pm block -->
-            <div id="4pm" class="row time-block">
-              <div class="col-md-1 hour">
-                  4 pm
-              </div>
-              <input id ="myText" class="col-md-9 description"/>
-              <button class="saveBtn col">SAVE</button>
-          </div>
-            </div>
-            <div class = "container">
-             <!-- 5pm block -->
-             <div id="5pm" class="row time-block">
-              <div class="col-md-1 hour">
-                  5 pm
-              </div>
-              <input id ="myText" class="col-md-9 description"/>
-              <button class="saveBtn col">SAVE</button>
-          </div>
-            </div>
-            <div class = "container">
-           <!-- 6pm block -->
-           <div id="6pm" class="row time-block">
-            <div class="col-md-1 hour">
-                6 pm
-            </div>
-            <input id ="myText" class="col-md-9 description"/>
-            <button class="saveBtn col">SAVE</button>
-          </div>
-          </div>
+          <input
+            type="text"
+            class="form-control"
+            aria-label="11am time block"
+          />
         </div>
+        <div class="col-2">
+          <button id="button4" type="button" class="btn btn-success">
+            Save
+          </button>
+        </div>
+      </div>
+      <div id="12" class="row align-items-center border border-primary">
+        <div class="input-group input-group-lg col-10">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="12pm">12pm</span>
+          </div>
+          <input
+            type="text"
+            class="form-control"
+            aria-label="12pm time block"
+          />
+        </div>
+        <div class="col-2">
+          <button id="button5" type="button" class="btn btn-success">
+            Save
+          </button>
+        </div>
+      </div>
+      <div id="1" class="row align-items-center border border-primary">
+        <div class="input-group input-group-lg col-10">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="1pm">1pm</span>
+          </div>
+          <input type="text" class="form-control" aria-label="1pm time block" />
+        </div>
+        <div class="col-2">
+          <button id="button6" type="button" class="btn btn-success">
+            Save
+          </button>
+        </div>
+      </div>
+      <div id="2" class="row align-items-center border border-primary">
+        <div class="input-group input-group-lg col-10">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="2pm">2pm</span>
+          </div>
+          <input type="text" class="form-control" aria-label="2pm time block" />
+        </div>
+        <div class="col-2">
+          <button id="button7" type="button" class="btn btn-success">
+            Save
+          </button>
+        </div>
+      </div>
+      <div id="3" class="row align-items-center border border-primary">
+        <div class="input-group input-group-lg col-10">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="3pm">3pm</span>
+          </div>
+          <input type="text" class="form-control" aria-label="3pm time block" />
+        </div>
+        <div class="col-2">
+          <button id="button8" type="button" class="btn btn-success">
+            Save
+          </button>
+        </div>
+      </div>
+      <div id="4" class="row align-items-center border border-primary">
+        <div class="input-group input-group-lg col-10">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="4pm">4pm</span>
+          </div>
+          <input type="text" class="form-control" aria-label="4pm time block" />
+        </div>
+        <div class="col-2">
+          <button id="button9" type="button" class="btn btn-success">
+            Save
+          </button>
+        </div>
+      </div>
+      <div id="5" class="row align-items-center border border-primary">
+        <div class="input-group input-group-lg col-10">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="5pm">5pm</span>
+          </div>
+          <input type="text" class="form-control" aria-label="5pm time block" />
+        </div>
+        <div class="col-2">
+          <button id="button10" type="button" class="btn btn-success">
+            Save
+          </button>
+        </div>
+      </div>
+      <div id="6" class="row align-items-center border border-primary">
+        <div class="input-group input-group-lg col-10">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="6pm">6pm</span>
+          </div>
+          <input type="text" class="form-control" aria-label="6pm time block" />
+        </div>
+        <div class="col-2">
+          <button id="button11" type="button" class="btn btn-success">
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
 
-    <script src="./assets/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/script.js></script>
   </body>
 </html>

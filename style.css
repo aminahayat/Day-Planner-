@@ -1,7 +1,8 @@
 .header{
-    color: darkslategray;
+    color: rgb(243, 247, 247);
     width: 100%;
     text-align: center;
+    background-color: rgb(167, 144, 85);
 }
 hr{
     height: 10px;
@@ -22,14 +23,14 @@ p{
 .saveBtn{
     margin-top: 10px;
     margin-left: 40px;
-    background-color: #f7b733;
+    background-color: #eda0bf;
     height: 40px;
     width: 70px;
     border-radius: 12px;
 
 }
 p{
-    color: #f7b733;
+    color: #09090a;
 }
 
 .past{

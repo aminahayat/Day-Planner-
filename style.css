@@ -1,0 +1,43 @@
+.header{
+    color: darkslategray;
+    width: 100%;
+    text-align: center;
+}
+hr{
+    height: 10px;
+    background-color: darkslategray;
+}
+.textArea{
+    width: 98%;
+    height: 40px;
+    border-radius: 12px;
+}
+#textArea:hover{
+    border-color: #f7b733;
+}
+p{
+    font-size: 17px;
+    font-weight: bold;
+}
+.saveBtn{
+    margin-top: 10px;
+    margin-left: 40px;
+    background-color: #f7b733;
+    height: 40px;
+    width: 70px;
+    border-radius: 12px;
+
+}
+p{
+    color: #f7b733;
+}
+
+.past{
+    background-color: #dfdce3;
+}
+.present{
+    background-color: #fc4a1a;
+}
+.future{
+    background-color: #4abdac;
+}
